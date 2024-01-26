@@ -98,8 +98,8 @@ export default class FilterCat {
 
 		this.#listElm = l as HTMLElement;
 
+		this.#initializeList();  // Initialize list first!
 		this.#initFilter(id, f);
-		this.#initializeList();
 
 		f.removeAttribute('hidden');
 	}
