@@ -1,0 +1,39 @@
+{
+	"name": "filter-cat",
+	"version": "1.0.0",
+	"description": "Flexible Filter Component",
+	"license": "MIT",
+	"author": "Takuto Yanagida",
+	"type": "module",
+	"homepage": "https://github.com/takty/filter-cat#readme",
+	"keywords": [
+		"js",
+		"css",
+		"html",
+		"style"
+	],
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/takty/filter-cat.git"
+	},
+	"bugs": {
+		"url": "https://github.com/takty/filter-cat/issues"
+	},
+	"browserslist": [
+		"> 1%",
+		"last 2 versions",
+		"not dead"
+	],
+	"scripts": {
+		"build": "node ./build.js",
+		"docs": "vite build",
+		"dev": "vite src/_docs --base ./",
+		"debug": "tsc --noEmit -w"
+	},
+	"devDependencies": {
+		"esbuild": "^0.19.5",
+		"esbuild-sass-plugin": "^2.16.0",
+		"typescript": "^5.2.2",
+		"vite": "^4.5.0"
+	}
+}

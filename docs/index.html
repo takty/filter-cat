@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sample - Filter Cat</title>
+<meta name="description" content="Samples of the Filter Cat">
+<meta name="author" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <script type="module" crossorigin src="./assets/index-e60b2a55.js"></script>
+  <link rel="stylesheet" href="./assets/index-9953e28b.css">
+</head>
+<body>
+<div class="content">
+	<h1>Filter Cat</h1>
+
+	<div class="filter">
+		<div class="filter-key" data-key="year">
+			<select class="filter-select">
+				<option value="">Year</option>
+				<option value="2023">2023</option>
+				<option value="2014">2014</option>
+				<option value="2013">2013</option>
+				<option value="2012">2012</option>
+				<option value="2011">2011</option>
+				<option value="2010">2010</option>
+				<option value="2009">2009</option>
+				<option value="2008">2008</option>
+				<option value="2006">2006</option>
+			</select>
+		</div>
+
+		<div class="filter-key" data-key="category">
+			<div>
+				<input type="checkbox" class="filter-enabled" value="1">
+				<label></label>
+				<label>Category</label>
+
+				<input type="checkbox" class="filter-relation">
+				<label><span>OR</span><span>AND</span></label>
+			</div>
+			<div class="filter-values">
+				<label><input type="checkbox" value="article">Article</label>
+				<label><input type="checkbox" value="inproceedings">Inproceedings</label>
+				<label><input type="checkbox" value="reviewed">Oral</label>
+				<label><input type="checkbox" value="reviewed">Poster</label>
+				<label><input type="checkbox" value="reviewed">Reviewed</label>
+			</div>
+		</div>
+	</div>
+
+	<div class="list">
+		<h2>Journal Papers</h2>
+		<ul>
+			<li id="yanagida2014csa" class="2014 article reviewed" data-year="2014" data-type="article" data-keyword="reviewed">
+				<span class="author"><em>Takuto Yanagida</em>, Katsunori Okajima, and Hidenori Mimura:</span>
+				<span class="title">&ldquo;Color Scheme Adjustment by Fuzzy Constraint Satisfaction for Color Vision Deficiencies&rdquo;,</span>
+				<span class="info">Color Research and Application, August, 2014.</span>
+				<details>
+					<summary>Abstract</summary>
+					<p>Color schemes or color combinations are widely used in printed materials and their digital versions, including web pages. These schemes convey information and create aesthetic appeal. Consequently, graphic designers have to strike a balance between accessibility and aesthetics with the color schemes they select. However, certain color schemes make the represented information confusing when viewers have color vision deficiencies (CVDs), which may lead to decrease in discriminability between used colors. What we will call the color-scheme-recoloring problem is the difficulty of optimizing a color scheme so as to preserve its original design and yet be simultaneously discriminable for all viewers, with or without CVDs. To address the problem, we formulated it within a framework of a fuzzy constraint satisfaction problem, a technique of artificial intelligence, and developed a tool for graphic designers. By utilizing the practical color co-ordinate system (PCCS), we introduce concepts used in the field of graphic design. This work combines pre-publication recoloring techniques for CVD viewers with elements of artificial intelligence, psychophysics, and psychology.</p>
+				</details>
+				<ul>
+					<li><a href="http://onlinelibrary.wiley.com/doi/10.1002/col.21913/abstract" title="Paper (Wiley) of 'Color Scheme Adjustment by Fuzzy Constraint Satisfaction for Color Vision Deficiencies'">Paper (Wiley)</a></li>
+				</ul>
+			</li>
+			<li id="yanagida2014ate" class="2014 article reviewed" data-year="2014" data-type="article" data-keyword="reviewed">
+				<span class="author"><em>Takuto Yanagida</em>, Yoshimitsu Okita, Harunobu Nakamura, Toshifumi Sugiura, and Hidenori Mimura:</span>
+				<span class="title">&ldquo;An Assessment Tool for Effective Monitoring of Autonomic Nervous System Activity in Healthy People&rdquo;,</span>
+				<span class="info">Journal of Advanced Computational Intelligence and Intelligent Informatics, Vol. 18, No. 3, pp. 297-304, March, 2014.</span>
+				<details>
+					<summary>Abstract</summary>
+					<p>This paper proposes an application that analyzes and displays electrocardiograms (ECG; electrical activity of the heart over time) and plethysmograms (PTG; pulse waves produced by the heart pumping blood to the periphery) measured simultaneously. Recently in developed countries, chronic conditions typified by lifestyle-related diseases have become the leading cause of death. Simplified monitoring of the condition can be an effective approach to disease prevention and health promotion. We have focused on autonomic nervous system activity (ANSA) because it responds to stress as well as to changes in dietary patterns, and is correlated with hypertension, the source of some diseases, such as coronary disease. In this paper, we deal with both ECGs and PTGs as part of the biological data that reflects ANSA. The proposed application enables doctors to seamlessly negotiate analyzed waveforms and index charts of ECGs and PTGs in sync with each other. It also helps them comprehend the transition of ANSA. It offers a user interface (UI) that enables doctors to observe the two measures and the relationship between them for a quick assessment of ANSA; the sonification function of the ECG indices is implemented for providing the multi-modality of the UI. An experiment was conducted to confirm the feasibility of the analysis method of the application.</p>
+				</details>
+				<ul>
+					<li><a href="http://www.fujipress.jp/finder/xslt.php?mode=present&inputfile=JACII001800030006.xml" title="Paper (Fujipress) of 'An Assessment Tool for Effective Monitoring of Autonomic Nervous System Activity in Healthy People'">Paper (Fujipress)</a></li>
+				</ul>
+			</li>
+			<li id="imura2012rbh" class="2012 article reviewed" data-year="2012" data-type="article" data-keyword="reviewed">
+				<span class="author">Yukino Imura, <em>Takuto Yanagida</em>, Hisashi Morii, Hidenori Mimura, and Toru Aoki:</span>
+				<span class="title">&ldquo;Reduction of the Beam Hardening Artifacts in the X-Ray Computer Tomography: Energy Discrimination with a Photon-Counting Detector&rdquo;,</span>
+				<span class="info">World Journal of Nuclear Science and Technology, Vol. 2, No. 4, pp. 169-173, October, 2012.</span>
+				<details>
+					<summary>Abstract</summary>
+					<p>The material identification is a pressing requirement for the sensitive security applications. Dual-energy X-ray computer tomography (DXCT) has been investigated for material identification in the medical and security fields. It requires two tomographic images at sufficiently different energies. To discriminate dangerous materials of light elements such as plastic bombs in luggage, it is needed to measure accurately with several tens of kilo electron volts where such materials exhibit significant spectral differences. However, CT images in that energy region often include artifacts from beam hardening. To reduce these artifacts, a novel reconstruction method has been investigated. It is an extension of the Al-gebraic Reconstruction Technique and Total Variation (ART-TV) method that reduces the artifacts in a lower-energy CT image by referencing it to an image obtained at higher energy. The CT image of a titanium sample was recon-structed using this method in order to demonstrate the artifact reduction capability.</p>
+				</details>
+				<ul>
+					<li><a href="http://www.scirp.org/journal/PaperInformation.aspx?paperID=23795" title="Paper (Scientific Research Publishing) of 'Reduction of the Beam Hardening Artifacts in the X-Ray Computer Tomography: Energy Discrimination with a Photon-Counting Detector'">Paper (Scientific Research Publishing)</a></li>
+				</ul>
+			</li>
+			<li id="yanagida2010tvb" class="2010 article reviewed" data-year="2010" data-type="article" data-keyword="reviewed">
+				<span class="author"><em>Takuto Yanagida</em>, Masahito Kurihara, and Hidetoshi Nonaka:</span>
+				<span class="title">&ldquo;A Tool for Visualizing the Behavior of Fuzzy Constraint Satisfaction Solvers&rdquo;,</span>
+				<span class="info">Journal of Advanced Computational Intelligence and Intelligent Informatics, Vol. 14, No. 5, pp. 425-430, February, 2010.</span>
+				<details>
+					<summary>Abstract</summary>
+					<p>This paper presents a software tool to intuitively comprehend and analyze fuzzy constraint satisfaction problems (FCSPs) through effective visualization with animation. FCSPs are an extension of constraint satisfaction problems (CSPs), which are used for formulating problems in real-world information systems. Once we formulate a problem as an FCSP, it can be solved (in principle) by any existing general-purpose FCSP solvers developed so far. However, the formulation is sometimes difficult because it requires high abstraction of real-world problems and affects the performance of the solvers. The authors believe that the tool will improve this situation by increasing the visibility of the behavior of the solvers.</p>
+				</details>
+				<ul>
+					<li><a href="http://www.fujipress.jp/finder/xslt.php?mode=present&inputfile=JACII001400050001.xml" title="Paper (Fujipress) of 'A Tool for Visualizing the Behavior of Fuzzy Constraint Satisfaction Solvers'">Paper (Fujipress)</a></li>
+				</ul>
+			</li>
+		</ul>
+
+		<h2>International Conference Presentations</h2>
+		<h3>Oral Presentations and Papers</h3>
+		<h4>Peer-Reviewed</h4>
+		<ul>
+			<li id="yanagida2023agl" class="2023 inproceedings international oral reviewed" data-year="2023" data-type="inproceedings" data-keyword="international oral reviewed">
+				<span class="author"><em>Takuto Yanagida</em>, Jean Vanderdonckt, and ◯Nicolas Burny:</span>
+				<span class="title">&ldquo;Adaptive GUI Layout by Satisfying Fuzzy Constraints&rdquo;,</span>
+				<span class="info">in Companion Proceedings of the 2023 ACM SIGCHI Symposium on Engineering Interactive Computing Systems, pp. 70-72, New York, NY, USA, June 26&ndash;30, 2023. Association for Computing Machinery.</span>
+				<details>
+					<summary>Abstract</summary>
+					<p>A graphical user interface is equipped with an adaptive layout when it holds the ability to dynamically adjust its layout and structure of widgets based on conditions that evolve over time coming from the end user, the platform used, and the environment. More specifically, such a layout automatically adapts itself depending on the window dimensions of the application, the screen resolution, and the screen size, thus posing a series of constraints that, sometimes, could not be entirely satisfied together at once. To cope with this variation, we formulate the adaptive GUI layout as a fuzzy constraint satisfaction problem in which the solver attempts to satisfy the most important constraints first, such as an appropriate widget selection, then the least important constraints after.</p>
+				</details>
+			</li>
+			<li id="hayashi2014cra" class="2014 inproceedings international oral reviewed" data-year="2014" data-type="inproceedings" data-keyword="international oral reviewed">
+				<span class="author">◯Shinpei Hayashi, <em>Takuto Yanagida</em>, Motoshi Saeki, and Hidenori Mimura:</span>
+				<span class="title">&ldquo;Class Responsibility Assignment as Fuzzy Constraint Satisfaction&rdquo;,</span>
+				<span class="info">in Proceedings of 2014 6th International Workshop on Empirical Software Engineering in Practice, pp. 19-24, Osaka, Japan, November 12&ndash;13, 2014.</span>
+				<details>
+					<summary>Abstract</summary>
+					<p>We formulate the class responsibility assignment (CRA) problem as the fuzzy constraint satisfaction problem (FCSP) for automating CRA of high quality. Responsibilities are contracts or obligations of objects that they should assume, by aligning them to classes appropriately, quality designs realize. Typical conditions of a desirable design are having a low coupling between highly cohesive classes. However, because of a trade-off among such conditions, solutions that satisfy the conditions moderately are desired, and computer assistance is needed. Additionally, if we have an initial assignment, the improved one by our technique should keep the original assignment as much as possible because it involves with the intention of human designers. We represent such conditions as fuzzy constraints, and formulate CRA as FCSP. That enables us to apply common FCSP solvers to the problem and to derive solution representing a CRA. The conducted preliminary evaluation indicates the effectiveness of our technique.</p>
+				</details>
+				<ul>
+					<li><a href="media/Hayashi2014cra_slides.pdf" title="Slides of 'Class Responsibility Assignment as Fuzzy Constraint Satisfaction'">Slides (1.38 MB)</a></li>
+				</ul>
+			</li>
+			<li id="yanagida2009pgu" class="2009 inproceedings international oral reviewed" data-year="2009" data-type="inproceedings" data-keyword="international oral reviewed">
+				<span class="author">◯<em>Takuto Yanagida</em>, Hidetoshi Nonaka, and Masahito Kurihara:</span>
+				<span class="title">&ldquo;Personalizing Graphical User Interfaces on Flexible Widget Layout&rdquo;,</span>
+				<span class="info">in Proceedings of the 1st ACM SIGCHI Symposium on Engineering Interactive Computing Systems (EICS 2009), pp. 255-264, Pittsburgh, PA, USA, July 14&ndash;17, 2009. ACM Press.</span>
+				<details>
+					<summary>Abstract</summary>
+					<p>The authors propose a method for personalizing the flexible widget layout (FWL) by adjusting the desirability of widgets with a pairwise comparison method, and show its implementation and that it actually works. Personalization of graphical user interfaces (GUIs) is important from a perspective of usability, and it is a challenge in the field of model-based user interface designs. The FWL is a model- and optimization-based layout framework of GUIs offering a possibility for personalization, but it has not actually realized it with any concrete method yet. In this paper, the authors implement a method for personalization as a dialog box and incorporate it into the existing system of the FWL; thus, users can personalize layouts generated by the FWL system at run-time.</p>
+				</details>
+				<ul>
+					<li><a href="http://portal.acm.org/citation.cfm?id=1570481" title="Proceeding (ACM Portal) of 'Personalizing Graphical User Interfaces on Flexible Widget Layout'">Proceeding (ACM Portal)</a></li>
+					<li><a href="media/Yanagida2009pgu_slides.pdf" title="Slides of 'Personalizing Graphical User Interfaces on Flexible Widget Layout'">Slides</a></li>
+				</ul>
+			</li>
+			<li id="koumoto2009pca" class="2009 inproceedings international oral reviewed" data-year="2009" data-type="inproceedings" data-keyword="international oral reviewed">
+				<span class="author">Yusuke Koumoto, ◯Hidetoshi Nonaka, and <em>Takuto Yanagida</em>:</span>
+				<span class="title">&ldquo;A Proposal of Context-Aware Service Composition Method Based on Analytic Hierarchy Process&rdquo;,</span>
+				<span class="info">in Proceedings of the 1st KES International Symposium on Intelligent Decision Technologies (KES IDT 2009), New Advances in Intelligent Decision Technologies, pp. 65-71, Himeji, Japan, April 23&ndash;24, 2009. Springer.</span>
+				<details>
+					<summary>Abstract</summary>
+					<p>We propose a new service composition method with the analytic hierarchy process and discuss its availability. The concept of context-aware services has been attracting attention as an approach to improving the usability of computer-mediated services. In ubiquitous computing environments, there are several means to provide services for users, and thus, to select an appropriate mean among them is a challenge. Our method for context-aware service composition determines service behaviors by context data. Through the implementation and examination of the method, we have found that the method can output reasonable results.</p>
+				</details>
+				<ul>
+					<li><a href="http://www.springerlink.com/content/pv435577378688q8/" title="Proceeding of 'A Proposal of Context-Aware Service Composition Method Based on Analytic Hierarchy Process'">Proceeding</a> &copy; Springer-Verlag, in <a href="http://www.springerlink.com/content/h03q8h7168k2/">New Advances in Intelligent Decision Technologies</a></li>
+					<li><a href="media/Koumoto2009pca_slides.pdf" title="Slides of 'A Proposal of Context-Aware Service Composition Method Based on Analytic Hierarchy Process'">Slides</a></li>
+				</ul>
+			</li>
+			<li id="yanagida2009fwl" class="2009 inproceedings international oral reviewed" data-year="2009" data-type="inproceedings" data-keyword="international oral reviewed">
+				<span class="author">◯<em>Takuto Yanagida</em> and Hidetoshi Nonaka:</span>
+				<span class="title">&ldquo;Flexible Widget Layout Formulated as Fuzzy Constraint Satisfaction Problem&rdquo;,</span>
+				<span class="info">in Proceedings of the 1st KES International Symposium on Intelligent Decision Technologies (KES IDT 2009), New Advances in Intelligent Decision Technologies, pp. 73-83, Himeji, Japan, April 23&ndash;24, 2009. Springer.</span>
+				<details>
+					<summary>Abstract</summary>
+					<p>We show an improvement of our previous work, a formulation of the flexible widget layout (FWL) problem as a fuzzy constraint satisfaction problem (FCSP) and a method for solving it. The automation of widget layout is one of the most important challenges for the generation of graphical user interfaces (GUIs). In the field of model-based user interface design, widget layout is more complicated because a layout system needs to select widgets. FWL is the automatic GUI generation requiring (1) deciding which widgets are used and (2) completing the layout immediately. We formulate the desirability of selection as fuzzy constraints; thus, we can utilize existing techniques of FCSP without extending its framework. We divide the layout process into three phases, and realize the automatic layout in feasible time.</p>
+				</details>
+				<ul>
+					<li><a href="http://www.springerlink.com/content/77685h2n884xnlw1/" title="Proceeding of 'Flexible Widget Layout Formulated as Fuzzy Constraint Satisfaction Problem'">Proceeding</a> &copy; Springer-Verlag, in <a href="http://www.springerlink.com/content/h03q8h7168k2/">New Advances in Intelligent Decision Technologies</a></li>
+					<li><a href="media/Yanagida2009fwl_slides.pdf" title="Slides of 'Flexible Widget Layout Formulated as Fuzzy Constraint Satisfaction Problem'">Slides</a></li>
+					<li><a href="../res/fwl/index.en.html" title="Demo of 'Flexible Widget Layout Formulated as Fuzzy Constraint Satisfaction Problem'">Demo</a></li>
+				</ul>
+			</li>
+			<li id="sudo2008kssa" class="2008 inproceedings international oral reviewed" data-year="2008" data-type="inproceedings" data-keyword="international oral reviewed">
+				<span class="author">Yasuhiro Sudo, Masahito Kurihara, and <em>Takuto Yanagida</em>:</span>
+				<span class="title">&ldquo;Keeping the Stability of Solutions to Dynamic Fuzzy CSPs&rdquo;,</span>
+				<span class="info">in Proceedings of the 2008 IEEE International Conference on Systems, Man and Cybernetics (SMC 2008), Singapore, October 12&ndash;15, 2008. IEEE.</span>
+				<details>
+					<summary>Abstract</summary>
+					<p>A fuzzy constraint satisfaction problem is an extension of the classical CSP, a powerful tool for modeling various problems based on constraints among variables, and a dynamic CSP is a framework for modeling the transformation of problems. These schemes are the technique to formulate real world problems as CSPs more easily. The CSP model that combines these is already has splendid researches. The Fuzzy Local Change algorithm is practicable enough in small-scale problems, but larger problems require the use of approximate methods. The algorithms for solving CSPs are classified into two categories: systematic searches (complete methods based on search trees), and local searches (approximate methods based on iterative improvement). Both have advantages and disadvantages.</p>
+					<p>In the work reported in this paper we tested a hybrid approximate method, called the Spread-Repair-Shrink algorithm, on dynamic, large-scale problems. The algorithm repairs local constraints by repeatedly spreading and shrinking a set of search trees until the degree to which the worst constraints (the roots of the trees) are satisfied is improved. In this process, the "stability" of solutions can be maintained because the reassignment is locally limited. Additionally, we innovate SRSD filter as after filtering. We empirically show that Spread-Repair-Shrink and SRSD algorithm keep the stability of solutions rather than other algorithms. It is able to quickly get a good-quality approximate and stabile solution to a large problem.</p>
+				</details>
+				<ul>
+					<li><a href="media/Sudo2008kssa.pdf" title="Proceeding of 'Keeping the Stability of Solutions to Dynamic Fuzzy CSPs'">Proceeding (1.13 MB)</a> <a href="#f1" class="footnote">1)</a> <a href="#f2" class="footnote">2)</a></li>
+				</ul>
+			</li>
+			<li id="yanagida2008ama" class="2008 inproceedings international oral reviewed" data-year="2008" data-type="inproceedings" data-keyword="international oral reviewed">
+				<span class="author">◯<em>Takuto Yanagida</em> and Hidetoshi Nonaka:</span>
+				<span class="title">&ldquo;Architecture for Migratory Adaptive User Interfaces&rdquo;,</span>
+				<span class="info">in Proceedings of the IEEE 8th International Conference on Computer and Information Technology (CIT 2008), pp. 450-455, Sydney, Australia, July 8&ndash;11, 2008. IEEE.</span>
+				<details>
+					<summary>Abstract</summary>
+					<p>We propose a new solution named interface client/logic server (ICLS), targeting dialog-based interactive services, supporting user interface (UI) migration, and offering adaptive UIs for devices and services. Constant improvements of technology have brought a large variety of platforms, and that has made users' new demands about the services. The first is that the users would like to use services through different devices and modalities depending on their use contexts. The second is that the users would sometimes like to change devices and take their tasks from one to another, which is called UI migration. Our architecture ICLS is designed based on client/server model. In ICLS, we use XML documents written in abstract interaction description language (AIDL) as logical descriptions of UIs, and introduce one of the semantic web technologies adding the function of expressing meanings of interactions.</p>
+				</details>
+				<ul>
+					<li><a href="media/Yanagida2008ama.pdf" title="Proceeding of 'Architecture for Migratory Adaptive User Interfaces'">Proceeding</a> <a href="#f1" class="footnote">1)</a> <a href="#f2" class="footnote">2)</a></li>
+					<li><a href="media/Yanagida2008ama_slides.pdf" title="Slides of 'Architecture for Migratory Adaptive User Interfaces'">Slides</a></li>
+				</ul>
+			</li>
+			<li id="yanagida2008idw" class="2008 inproceedings international oral reviewed" data-year="2008" data-type="inproceedings" data-keyword="international oral reviewed">
+				<span class="author">◯<em>Takuto Yanagida</em> and Hidetoshi Nonaka:</span>
+				<span class="title">&ldquo;Interaction Description with Service-Specific Meanings&rdquo;,</span>
+				<span class="info">in Proceedings of the 5th International Conference on Cybernetics and Information Technologies, Systems and Applications (CITSA 2008), pp. 185-188, Orlando, FL, USA, June 29&ndash;July 2, 2008. IIIS.</span>
+				<details>
+					<summary>Abstract</summary>
+					<p>An XML-based language, abstract interaction description language (AIDL), we propose, describes abstracted interactions instead of UI descriptions and includes meanings of these interactions. Computer-based services, which are various appliances and applications operated or utilized with user interface (UI) devices, have pervaded our everyday lives. Our approach, interface client/logic server (ICLS) is a model-based UI architecture supporting UI separation, generation, and migration comprehensively. It enables users to select various devices and services according to their different needs before or during service sessions. AIDL enables our architecture ICLS to handle interactions of specific service domains maintaining the independence of services from specific devices and modalities.</p>
+				</details>
+				<ul>
+					<li><a href="media/Yanagida2008idw_slides.pdf" title="Slides of 'Interaction Description with Service-Specific Meanings'">Slides</a></li>
+				</ul>
+			</li>
+			<li id="sudo2008kss" class="2008 inproceedings international oral reviewed" data-year="2008" data-type="inproceedings" data-keyword="international oral reviewed">
+				<span class="author">Yasuhiro Sudo, Masahito Kurihara, and ◯<em>Takuto Yanagida</em>:</span>
+				<span class="title">&ldquo;Keeping the Stability of Solutions in Dynamic Fuzzy CSPs&rdquo;,</span>
+				<span class="info">in Proceedings of the 2008 IEEE Conference on Soft Computing in Industrial Applications (SMCia/08), pp. 382-386, Muroran, Japan, June 25&ndash;27, 2008. IEEE.</span>
+				<details>
+					<summary>Abstract</summary>
+					<p>A fuzzy constraint satisfaction problem (FCSP) is an extension of the classical CSP, a powerful tool for modeling various problems based on constraints among variables. Meanwhile, a dynamic CSP is a framework for modeling the dynamic transform of problems. These schemes are the technique to formulate real world problems as CSPs, more easily.</p>
+					<p>The CSP model that combines these is already has splendid researches. The Fuzzy Local Change algorithm is practicable enough in small-scale problems. However, when the scale of the problems grows to some degree, it becomes necessary to use approximate methods. Basically, the algorithms for solving CSPs are classified into two categories: the systematic search (complete methods based on search trees) and the local search (approximate methods based on iterative improvement). Both have merits and demerits.</p>
+					<p>In this paper, we tested a hybrid, approximate method called the SRS algorithm, in case of large-scale problems. SRS repeats spreading and shrinking a set of search trees in order to repair local constraints until the satisfaction degree of the worst constraints (which are the roots of the trees) is improved. In this process, the "stability" of solutions can be maintained because the reassignment is locally limited. We empirically show that SRS keeps the stability of solutions rather than starting the search from scratch. It is able to quickly get a good-quality approximate and stabilized solution of sufficiently large size of problems.</p>
+				</details>
+				<ul>
+					<li><a href="media/Sudo2008kss.pdf" title="Proceeding of 'Keeping the Stability of Solutions in Dynamic Fuzzy CSPs'">Proceeding</a> <a href="#f1" class="footnote">1)</a> <a href="#f2" class="footnote">2)</a></li>
+					<li><a href="media/Sudo2008kss_slides.pdf" title="Slides of 'Keeping the Stability of Solutions in Dynamic Fuzzy CSPs'">Slides</a></li>
+				</ul>
+			</li>
+			<li id="yanagida2008fwl" class="2008 inproceedings international oral reviewed" data-year="2008" data-type="inproceedings" data-keyword="international oral reviewed">
+				<span class="author">◯<em>Takuto Yanagida</em> and Hidetoshi Nonaka:</span>
+				<span class="title">&ldquo;Flexible Widget Layout with Fuzzy Constraint Satisfaction&rdquo;,</span>
+				<span class="info">in Proceedings of the 2008 IEEE Conference on Soft Computing in Industrial Applications (SMCia/08), pp. 387-392, Muroran, Japan, June 25&ndash;27, 2008. IEEE.</span>
+				<details>
+					<summary>Abstract</summary>
+					<p>We propose a new solution for the flexible widget layout (FWL) problem, formulating this problem as a fuzzy constraint satisfaction problem (FCSP) in the field of artificial intelligence. Widget layout performed by computers is one of the most important challenges for automatic generation of graphical user interfaces (GUIs). In the field of model-based user interface design, the widget layout is more complicated because the process of selecting widgets is needed. The FWL, we named, is the automatic GUI generation, which requires both (1) deciding which widget types and their alignments are used and (2) completing the layout in a certain time especially when the system generates them in run time. Our system automatically selects appropriate widgets and lays them out in certain rectangles. We formulate the desirability of the selection straightforward as fuzzy constraints; therefore, we can utilize existing technique of FCSP for the FWL. We divide the layout process into three phases, and using an existing FCSP algorithm, we realize the layout in a short time enough not to keep users of the generated GUI waiting.</p>
+				</details>
+				<ul>
+					<li><a href="media/Yanagida2008fwl.pdf" title="Proceeding of 'Flexible Widget Layout with Fuzzy Constraint Satisfaction'">Proceeding</a> <a href="#f1" class="footnote">1)</a> <a href="#f2" class="footnote">2)</a></li>
+					<li><a href="media/Yanagida2008fwl_slides.pdf" title="Slides of 'Flexible Widget Layout with Fuzzy Constraint Satisfaction'">Slides</a></li>
+					<li><a href="../res/fwl/index.en.html" title="Demo of 'Flexible Widget Layout with Fuzzy Constraint Satisfaction'">Demo</a></li>
+				</ul>
+			</li>
+			<li id="yanagida2006upia" class="2006 inproceedings international oral reviewed" data-year="2006" data-type="inproceedings" data-keyword="international oral reviewed">
+				<span class="author">◯<em>Takuto Yanagida</em>, Hidetoshi Nonaka, and Masahito Kurihara:</span>
+				<span class="title">&ldquo;User-Preferred Interface Design with Abstract Interaction Description Language&rdquo;,</span>
+				<span class="info">in Proceedings of the 2006 IEEE International Conference on Systems, Man and Cybernetics (SMC 2006), pp. 2458-2463, Taipei, Taiwan, October 8&ndash;11, 2006. IEEE.</span>
+				<details>
+					<summary>Abstract</summary>
+					<p>For user-preferred interfaces, we propose a service architecture, the Interface-Client/Logic-Server (ICLS). It separates specific interfaces from services. An ICLS-based service consists of some interface clients and a logic server. The target of this work is the services with intermediary computers in various scenes of our daily activities. Nowadays, against various users' characteristics, the services offer different UIs individually, and they are mostly single GUI. In ICLS, users can switch interfaces of services to suit their preferences and to customize flexibly. Interface clients and logic servers work together independently with common descriptions of interaction. Those descriptions are written in the Abstract Interaction Description Language (AIDL), we propose. AIDL is an application of semantic web technologies, and describes interactions as graphs. These graphs represent a specification of interfaces and the current state of interactions constantly. We propose a framework of ICLS-based service design. Developers can use it like GUI toolkits. With this framework, we developed three clients and two servers.</p>
+				</details>
+				<ul>
+					<li><a href="media/Yanagida2006upia.pdf" title="Proceeding of 'User-Preferred Interface Design with Abstract Interaction Description Language'">Proceeding</a> <a href="#f1" class="footnote">1)</a> <a href="#f2" class="footnote">2)</a></li>
+					<li><a href="media/Yanagida2006upia_slides.pdf" title="Slides of 'User-Preferred Interface Design with Abstract Interaction Description Language'">Slides</a></li>
+				</ul>
+			</li>
+		</ul>
+
+		<h4>Not-Reviewed</h4>
+		<ul>
+			<li id="yanagida2010acs" class="2010 inproceedings international oral unreviewed" data-year="2010" data-type="inproceedings" data-keyword="international oral unreviewed">
+				<span class="author">◯<em>Takuto Yanagida</em> and Hidenori Mimura:</span>
+				<span class="title">&ldquo;Automatic Color Scheme Adjustment for Different Color Vision&rdquo;,</span>
+				<span class="info">in Proceedings of the 12th Takayanagi Kenjiro Memorial Symposium, pp. (S2-3-)1-4, Hamamatsu, Japan, November 18&ndash;19, 2010.</span>
+				<details>
+					<summary>Abstract</summary>
+					<p>The authors propose a system which adjusts automatically color schemes for different color vision. Designing color scheme is difficult problem because it has two aspects, art design and accessibility, and they relate to each other. We formulate color scheme problem as a fuzzy constraint satisfaction problem, and implement a prototype system for proving the feasibility of our method.</p>
+				</details>
+				<ul>
+					<li><a href="media/Yanagida2010acs.pdf" title="Proceeding of 'Automatic Color Scheme Adjustment for Different Color Vision'">Proceeding</a></li>
+					<li><a href="media/Yanagida2010acs_slides.pdf" title="Slides of 'Automatic Color Scheme Adjustment for Different Color Vision'">Slides</a></li>
+					<li><a href="../res/cosaf/index.en.html" title="Demo of 'Automatic Color Scheme Adjustment for Different Color Vision'">Demo</a></li>
+				</ul>
+			</li>
+		</ul>
+
+		<h3>Poster Presentations</h3>
+		<ul>
+			<li id="yanagida2013dab" class="2013 inproceedings international poster unreviewed" data-year="2013" data-type="inproceedings" data-keyword="international poster unreviewed">
+				<span class="author">◯<em>Takuto Yanagida</em>, Yoshimitsu Okita, Harunobu Nakamura, Toshifumi Sugiura, and Hidenori Mimura:</span>
+				<span class="title">&ldquo;Development of Application for Brief Assessment of Autonomic Nervous Activity in Healthy People&rdquo;,</span>
+				<span class="info">Proceedings of the 35th Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC ’13), p. [no data], Osaka, Japan, 2013年7月.</span>
+				<details>
+					<summary>Abstract</summary>
+					<p class="poster">
+						<img src="media/Yanagida2013dab_poster_s.png" alt="A thumbnail of the poster of 'Development of Application for Brief Assessment of Autonomic Nervous Activity in Healthy People'" width="172" height="240">
+						We propose an application that analyzes and visu-alizes electrocardiogram and plethysmogram data; it offers a user interface enabling users to browse the data checking their relation, for brief assessment of autonomic nervous activity (ANA). Our application enables users to traverse analyzed data seamlessly, and helps them comprehend the transition of ANA.
+					</p>
+				</details>
+				<ul>
+					<li><a href="media/Yanagida2013dab_poster.pdf" title="Poster of 'Development of Application for Brief Assessment of Autonomic Nervous Activity in Healthy People'">Poster</a></li>
+				</ul>
+			</li>
+			<li id="yanagida2011mam" class="2011 inproceedings international poster unreviewed" data-year="2011" data-type="inproceedings" data-keyword="international poster unreviewed">
+				<span class="author">◯<em>Takuto Yanagida</em>, Yoshimitsu Okita, Harunobu Nakamura, Katsuyasu Kouda, Toshifumi Sugiura, and Hidenori Mimura:</span>
+				<span class="title">&ldquo;Mavep: An Application for Mibyo by Analyzing and Visualizing Electrocardiogram and Plethysmogram&rdquo;,</span>
+				<span class="info">第4回国際健康長寿科学会議, p. 43, 静岡, 2011年10月21日.</span>
+				<details>
+					<summary>Abstract</summary>
+					<p class="poster">
+						<img src="media/Yanagida2011mam_poster_s.png" alt="A thumbnail of the poster of 'Mavep: An Application for Mibyo by Analyzing and Visualizing Electrocardiogram and Plethysmogram'" width="160" height="240">
+						Recently in developed countries, chronic conditions represented by lifestyle-related diseases have become leading causes of death. In these circumstances, primary or secondary prevention is the most effective way to avoid them. Hence, it is important to be able to monitor simply our health condition for both disease prevention and health promotion.
+					</p>
+					<p>We have focused on autonomic nervous activity (ANA) because it responds with stress as well as changes in dietary patterns, and it correlates with heart diseases. In this work, we consider both electrocardiogram (ECG) and plethysmogram (PTG) as the physiological data that reflects ANA. ECG and PTG obtained from healthy people provide several indices including aging index and pulse transmission time, and could be available as signs of asymptomatic illness. However, it is difficult to find predictive information from raw data of ECG and PTG.</p>
+					<p>In our work, we propose an application that analyzes ECG and PTG, and visualizes their indices and waveforms and call Mavep; it offers a tailored user interface (UI) enabling users to browse the two data checking their relationship, for brief assessment of ANA. We develop the application in Java from the viewpoint of portability, independence from specific platforms, putting weight on its UI for providing it as a tool for doctors. We implement both algorithms for analyzing raw data of ECG and PTG, and tailored UI that facilitates interaction between the physiological data and users.</p>
+				</details>
+				<ul>
+					<li><a href="media/Yanagida2011mam_poster.pdf" title="Poster of 'Mavep: An Application for Mibyo by Analyzing and Visualizing Electrocardiogram and Plethysmogram'">Poster (1.31 MB)</a></li>
+				</ul>
+			</li>
+			<li id="yanagida2009iff" class="2009 inproceedings international poster unreviewed" data-year="2009" data-type="inproceedings" data-keyword="international poster unreviewed">
+				<span class="author">◯<em>Takuto Yanagida</em> and Hidetoshi Nonaka:</span>
+				<span class="title">&ldquo;Improved Formulation of Flexible Widget Layout&rdquo;,</span>
+				<span class="info">in Proceedings of the 2nd International Symposium on Global COE Program of Center for Next-Generation Information Technology based on Knowledge Discovery and Knowledge Federation (GCOE-NGIT 2009), Hokkaido University, Sapporo, Japan, January 20&ndash;21, 2009.</span>
+				<details>
+					<summary>Abstract</summary>
+					<p class="poster">
+						<img src="media/Yanagida2009iff_poster_s.png" alt="A thumbnail of the poster of 'Improved Formulation of Flexible Widget Layout'" width="170" height="240">
+						We propose an improvement of our previous work, a formulation of the flexible widget layout (FWL) problem as a fuzzy constraint satisfaction problem (FCSP). Automatic widget layout is an important challenge for the graphical user interfaces (GUIs) generation. In the field of model-based user interface design, the layout is more complicated because to select widgets is needed. FWL is GUI generations with deciding which widgets are used. In this paper, we improve our previous work so that the formulation coincides more strictly with FCSP.
+					</p>
+				</details>
+				<ul>
+					<li><a href="media/Yanagida2009iff.pdf" title="Proceeding of 'Improved Formulation of Flexible Widget Layout'">Proceeding</a></li>
+					<li><a href="media/Yanagida2009iff_poster.pdf" title="Poster of 'Improved Formulation of Flexible Widget Layout'">Poster</a></li>
+					<li><a href="../res/fwl/index.en.html" title="Demo of 'Improved Formulation of Flexible Widget Layout'">Demo</a></li>
+				</ul>
+			</li>
+			<li id="yanagida2008mau" class="2008 inproceedings international poster unreviewed" data-year="2008" data-type="inproceedings" data-keyword="international poster unreviewed">
+				<span class="author">◯<em>Takuto Yanagida</em> and Hidetoshi Nonaka:</span>
+				<span class="title">&ldquo;Migratory Adaptive User Interfaces&rdquo;,</span>
+				<span class="info">in Proceedings of 2008 International Symposium on Global COE Program of Center for Next-Generation Information Technology based on Knowledge Discovery and Knowledge Federation (GCOE-NGIT 2008), Hokkaido University, Sapporo, Japan, January 22&ndash;23, 2008.</span>
+				<details>
+					<summary>Abstract</summary>
+					<p class="poster">
+						<img src="media/Yanagida2008mau_poster_s.png" alt="A thumbnail of the poster of 'Migratory Adaptive User Interfaces'" width="170" height="240">
+						We propose a new solution named interface client/logic server (ICLS), targeting dialog-based interactive services, supporting user interface (UI) migration, and offering adaptive UIs for devices and services. Constant improvements of technology have brought a large variety of platforms, and that has made users' new demands about the services. The first is that the users would like to use services through different devices and modalities depending on their use contexts. The second is that the users would sometimes like to change devices and take their tasks from one to another, which is called UI migration. Our architecture ICLS is designed based on client/server model. In ICLS, we use XML documents written in abstract interaction description language (AIDL) as logical descriptions of UIs, and introduce one of the semantic web technologies adding the function of expressing meanings of interactions.
+					</p>
+				</details>
+				<ul>
+					<li><a href="media/Yanagida2008mau.pdf" title="Proceeding of 'Migratory Adaptive User Interfaces'">Proceeding</a></li>
+					<li><a href="media/Yanagida2008mau_poster.pdf" title="Poster of 'Migratory Adaptive User Interfaces'">Poster</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</div>
+</body>
+</html>
