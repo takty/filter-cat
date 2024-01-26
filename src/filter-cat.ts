@@ -320,7 +320,7 @@ export default class FilterCat {
 				}
 			} else if (type === 'checkbox') {
 				const [ena, rel, cbs] = es;
-				if (ena && rel && cbs && ena.checked) {
+				if (cbs && ena && ena.checked) {
 					const oa = (rel && rel.checked) ? 'and' : 'or';
 					kvs.set(key, [oa, this.#getCheckedVals(cbs), cls, qvar]);
 				}
