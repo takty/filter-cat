@@ -67,11 +67,11 @@ export default class FilterCat {
 	#selFilterValues  : string =  '.filter-values';
 
 	#qvarBase  : string = '%key%';  // Base of query variable names ('%key%' is replaced by the key).
-	#dsQvarBase: string = 'qvar-base';
+	#dsQvarBase: string = 'qvarBase';  // Make sure to convert it to a snake case when writing within a tag.
 	#dsQvar    : string = 'qvar';
 
 	#classBase  : string = '%value%';  // Base of value class names ('%key%' and '%value%' are replaced by the key and the value).
-	#dsClassBase: string = 'class-base';
+	#dsClassBase: string = 'classBase';  // Make sure to convert it to a snake case when writing within a tag.
 
 	#dsKey  : string = 'key';    // For filters.
 	#dsCount: string = 'count';  // For headings and lists
