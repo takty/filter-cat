@@ -2,7 +2,7 @@
  * Styles for Sample
  *
  * @author Takuto Yanagida
- * @version 2024-01-26
+ * @version 2024-01-28
  */
 
 @use 'sass:math';
@@ -16,7 +16,6 @@
 }
 
 body {
-	min-height   : 200vh;
 	padding-block: 4vh;
 	overflow-x   : hidden;
 
