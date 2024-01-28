@@ -2,7 +2,7 @@
  * Filter class for constructing and managing filters on a page.
  *
  * @author Takuto Yanagida
- * @version 2024-01-26
+ * @version 2024-01-28
  *
  * @remarks
  * This class provides functionality to construct and manage filters on a page.
@@ -77,8 +77,9 @@ export default class FilterCat {
 	#dsCount: string = 'count';  // For headings and lists
 	#dsDepth: string = 'depth';  // For headings
 
-	#doSetHeadingDepth   : boolean = true;
-	#doInitializeByParams: boolean = true;
+	#doSetHeadingDepth       : boolean = true;
+	#doInitializeByParams    : boolean = true;
+	#doSupportDynamicAddition: boolean = true;
 
 	#listElm: HTMLElement;
 	#keyToUis: Map<string, [string, string, string, [HTMLInputElement, HTMLInputElement|null, HTMLInputElement[]|null]]> = new Map();
@@ -102,6 +103,17 @@ export default class FilterCat {
 		this.#initFilter(id, f);
 
 		f.removeAttribute('hidden');
+
+		if (this.#doSupportDynamicAddition) {
+			const mo = new MutationObserver(mrs => {
+				for (const mr of mrs) {
+					if (mr.type === 'childList') {
+						this.#updateAt(mr.addedNodes[0] as Element);
+					}
+				}
+			});
+			mo.observe(this.#listElm, { childList: true });
+		}
 	}
 
 	/**
@@ -234,6 +246,20 @@ export default class FilterCat {
 		this.#freeListHeight();
 
 		this.#setUrlParams(keyToVals);
+	}
+
+	/**
+	 * Updates the list based on the current filter criteria.
+	 *
+	 * @private
+	 * @param start - (Optional) Element that start updating.
+	 */
+	#updateAt(start: Element|null = null): void {
+		const keyToVals = this.#getKeyToVals();
+
+		this.#initializeList(start);  // Initialize list first!
+		this.#filterLists(keyToVals, start);
+		this.#countUpItems(start);
 	}
 
 
@@ -414,16 +440,16 @@ export default class FilterCat {
 	 * Initializes the list by assigning depth values to heading elements.
 	 *
 	 * @private
+	 * @param start - (Optional) Element that start initializing.
 	 */
-	#initializeList() {
-		const assignDepth = () => {
-			for (const h of this.#listElm.children) {
-				if (!(h instanceof HTMLHeadingElement)) continue;
-				(h as HTMLElement).dataset[this.#dsDepth] = String(parseInt(h.tagName[1]) - 1);
-			}
-		}
+	#initializeList(start: Element|null = null) {
 		if (this.#doSetHeadingDepth) {
-			assignDepth();
+			if (!start) start = this.#listElm.firstElementChild;
+
+			for (let e = start; e; e = e?.nextElementSibling) {
+				if (!(e instanceof HTMLHeadingElement)) continue;
+				e.dataset[this.#dsDepth] = String(parseInt(e.tagName[1]) - 1);
+			}
 		}
 	}
 
@@ -438,11 +464,8 @@ export default class FilterCat {
 	 */
 	#fixListHeight() {
 		for (const e of this.#listElm.children) {
-			if (!(e instanceof HTMLElement)) continue;
-			if (e.tagName !== 'OL' && e.tagName !== 'UL') continue;
-
-			const h = e.offsetHeight;
-			e.setAttribute('style', `--height:${h}px;`);
+			if (!(e instanceof HTMLOListElement || e instanceof HTMLUListElement)) continue;
+			e.setAttribute('style', `--height:${e.offsetHeight}px;`);
 		}
 	}
 
@@ -453,9 +476,7 @@ export default class FilterCat {
 	 */
 	#freeListHeight() {
 		for (const e of this.#listElm.children) {
-			if (!(e instanceof HTMLElement)) continue;
-			if (e.tagName !== 'OL' && e.tagName !== 'UL') continue;
-
+			if (!(e instanceof HTMLOListElement || e instanceof HTMLUListElement)) continue;
 			e.removeAttribute('style');
 		}
 	}
@@ -469,11 +490,13 @@ export default class FilterCat {
 	 *
 	 * @private
 	 * @param keyToVals - Mapping of filter keys to their values
+	 * @param start - (Optional) Element that start filtering.
 	 */
-	#filterLists(keyToVals: KeyToVals): void {
-		for (const e of this.#listElm.children) {
-			if (!(e instanceof HTMLElement)) continue;
-			if (e.tagName !== 'OL' && e.tagName !== 'UL') continue;
+	#filterLists(keyToVals: KeyToVals, start: Element|null = null): void {
+		if (!start) start = this.#listElm.firstElementChild;
+
+		for (let e = start; e; e = e?.nextElementSibling) {
+			if (!(e instanceof HTMLOListElement || e instanceof HTMLUListElement)) continue;
 
 			let count = 0;
 			for (const li of e.children) {
@@ -545,28 +568,36 @@ export default class FilterCat {
 	 * Counts up the number of items under each heading and updates their visibility.
 	 *
 	 * @private
+	 * @param start - (Optional) Element that start counting up.
 	 */
-	#countUpItems(): void {
-		for (const e of this.#listElm.children) {
-			if (!(e instanceof HTMLElement)) continue;
+	#countUpItems(start: Element|null = null): void {
+		if (!start) start = this.#listElm.firstElementChild;
 
-			if (e.dataset[this.#dsDepth]) e.dataset[this.#dsCount] = '0';  // 'e' is heading
+		for (let e = start; e; e = e?.nextElementSibling) {
+			if (e instanceof HTMLHeadingElement && e.dataset[this.#dsDepth]) {
+				e.dataset[this.#dsCount] = '0';
+			}
 		}
-		const hs: HTMLElement[] = [];
-		for (const e of this.#listElm.children) {
-			if (!(e instanceof HTMLElement)) continue;
-
-			if (e.dataset[this.#dsDepth]) {  // 'e' is heading
-				const hi = parseInt(e.dataset[this.#dsDepth] ?? '');
+		const hs: [HTMLElement, number][] = [];
+		for (let e = start?.previousElementSibling; e; e = e?.previousElementSibling) {
+			if (e instanceof HTMLHeadingElement && e.dataset[this.#dsDepth]) {
+				const dp = parseInt(e.dataset[this.#dsDepth] ?? '');
+				if (!hs.length || dp < hs[0][1]) {
+					hs.unshift([e, dp]);
+				}
+			}
+		}
+		for (let e = start; e; e = e?.nextElementSibling) {
+			if (e instanceof HTMLHeadingElement && e.dataset[this.#dsDepth]) {
+				const dp = parseInt(e.dataset[this.#dsDepth] ?? '');
 				while (hs.length > 0) {
-					const l = hs[hs.length - 1];
-					if (hi > parseInt(l.dataset[this.#dsDepth] ?? '')) break;
+					if (dp > hs[hs.length - 1][1]) break;
 					hs.length -= 1;
 				}
-				hs.push(e);
-			} else {  // 'e' is list
+				hs.push([e, dp]);
+			} else if (e instanceof HTMLOListElement || e instanceof HTMLUListElement) {
 				const count = parseInt(e.dataset[this.#dsCount] ?? '');
-				for (const h of hs) {
+				for (const [h,] of hs) {
 					const sum = parseInt(h.dataset[this.#dsCount] ?? '') + count;
 					h.dataset[this.#dsCount] = String(sum);
 					if (sum) {
